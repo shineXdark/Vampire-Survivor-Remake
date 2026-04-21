@@ -1,18 +1,26 @@
 {
-  "name": "neon-horde",
-  "version": "1.3.0",
-  "private": true,
-  "description": "A polished survivor-style browser game with auto-fire, XP shards, and random upgrades.",
+  "name": "void-survivors",
+  "version": "3.3.0",
+  "description": "Void Survivors - PvE Roguelite with LAN Multiplayer",
+  "main": "server.js",
   "scripts": {
-    "generate:assets": "node ./scripts/generate-assets.mjs",
-    "start": "node ./server.js",
-    "serve": "node ./server.js"
+    "start": "node server.js",
+    "build-exe": "pkg . --targets node18-win-x64 --output dist/VoidSurvivors.exe"
+  },
+  "bin": "server.js",
+  "pkg": {
+    "assets": ["index.html"],
+    "targets": ["node18-win-x64"],
+    "outputPath": "dist"
   },
   "dependencies": {
-    "express": "^4.21.2",
-    "ws": "^8.18.0"
+    "express": "^4.19.2",
+    "ws": "^8.18.0",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
-    "pureimage": "^0.4.18"
-  }
+    "pkg": "^5.8.1"
+  },
+  "author": "Void Survivors Dev",
+  "license": "MIT"
 }
